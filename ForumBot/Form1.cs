@@ -25,12 +25,14 @@ namespace ForumBot
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             checkedListBox1.Items.Clear();
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             webBrowser1.Navigate(uri);
+            await  WaitNSeconds(2000);
+            
             
 
 
@@ -59,37 +61,42 @@ namespace ForumBot
             }
         }
 
+        private async Task WaitNSeconds(int millsec)
+        {
+           
+              await Task.Delay(millsec);
+            
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(textBox1.Text!="" && textBox2.Text != "")
             login(textBox1.Text, textBox2.Text);
             
           
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            foreach (HtmlElement HtmlElement1 in webBrowser1.Document.Body.All)
+            if (button2.Text == "Başlat")
             {
-
-                if (HtmlElement1.TagName=="TEXTAREA")//
+                if (textBox3.Text != "" && richTextBox1.Text != "")
                 {
-                   
-                    HtmlElement1.SetAttribute("value", "yeni pc al kardeşim");
-              
-
-
-                }
-
-                if (HtmlElement1.OuterText != null && HtmlElement1.OuterText.ToLower() == " Cevap yaz ".ToLower())//Bu alana bir cevap yazın...
-                {
-
-                    HtmlElement1.InvokeMember("Click");
-                    break;
+                    webBrowser1.Navigate(textBox3.Text);
+                    await WaitNSeconds(2000);
+                    timer1.Enabled = true;
+                    button2.Text = "Durdur";
 
                 }
 
             }
+            else
+            {
+                timer1.Enabled = false;
+                button2.Text = "Başlat";
+            }
+            
+          
 
          
         }
@@ -121,7 +128,41 @@ namespace ForumBot
 
         private void button3_Click(object sender, EventArgs e)
         {
-            checkedListBox1.Items.Add(comboBox1.SelectedItem.ToString()+ comboBox2.SelectedItem.ToString(), true);//DateTime.Now.TimeOfDay.ToString("hh''mm")
+            checkedListBox1.Items.Add(comboBox1.SelectedItem.ToString()+ comboBox2.SelectedItem.ToString(), true);
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach (var item in checkedListBox1.CheckedItems )
+            {
+                if( item.ToString()== DateTime.Now.TimeOfDay.ToString("hh''mm"))
+                {
+                    foreach (HtmlElement HtmlElement1 in webBrowser1.Document.Body.All)
+                    {
+
+                        if (HtmlElement1.TagName == "TEXTAREA")//
+                        {
+
+                            HtmlElement1.SetAttribute("value", richTextBox1.Text);
+                            
+                        }
+
+                        if (HtmlElement1.OuterText != null && HtmlElement1.OuterText.ToLower() == " Cevap yaz ".ToLower())//Bu alana bir cevap yazın...
+                        {
+
+                            HtmlElement1.InvokeMember("Click");
+                            break;
+
+                        }
+
+                    }
+                    await WaitNSeconds(2000);
+                    webBrowser1.Navigate(textBox3.Text);
+                    await WaitNSeconds(2000);
+
+                }
+            }
+            
         }
     }
 }
