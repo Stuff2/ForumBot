@@ -1,0 +1,10 @@
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\bin\Debug\ForumBot.exe.config
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\bin\Debug\ForumBot.exe
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\bin\Debug\ForumBot.pdb
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.csprojAssemblyReference.cache
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.Form1.resources
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.Properties.Resources.resources
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.csproj.GenerateResource.cache
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.csproj.CoreCompileInputs.cache
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.exe
+C:\Users\iarikan\source\repos\ForumBot\ForumBot\obj\Debug\ForumBot.pdb
