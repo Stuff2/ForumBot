@@ -14,6 +14,7 @@ namespace ForumBot
     public partial class Form1 : Form
     {
         string uri = "http://forum.thedeathko.com/index.php?login/";
+        string lastOp = "1";
         public Form1()
         {
             InitializeComponent();
@@ -135,8 +136,9 @@ namespace ForumBot
         {
             foreach (var item in checkedListBox1.CheckedItems )
             {
-                if( item.ToString()== DateTime.Now.TimeOfDay.ToString("hh''mm"))
+                if( item.ToString()== DateTime.Now.TimeOfDay.ToString("hh''mm") && lastOp!= DateTime.Now.TimeOfDay.ToString("hh''mm"))
                 {
+                    lastOp = DateTime.Now.TimeOfDay.ToString("hh''mm");
                     foreach (HtmlElement HtmlElement1 in webBrowser1.Document.Body.All)
                     {
 
@@ -156,9 +158,8 @@ namespace ForumBot
                         }
 
                     }
-                    await WaitNSeconds(2000);
-                    webBrowser1.Navigate(textBox3.Text);
-                    await WaitNSeconds(2000);
+                    await WaitNSeconds(5000);
+                   
 
                 }
             }
