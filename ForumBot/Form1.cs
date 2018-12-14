@@ -28,9 +28,7 @@ namespace ForumBot
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            checkedListBox1.Items.Clear();
             comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
             webBrowser1.Navigate(uri);
             await  WaitNSeconds(2000);
             
@@ -129,14 +127,12 @@ namespace ForumBot
 
         private void button3_Click(object sender, EventArgs e)
         {
-            checkedListBox1.Items.Add(comboBox1.SelectedItem.ToString()+ comboBox2.SelectedItem.ToString(), true);
+           
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (var item in checkedListBox1.CheckedItems )
-            {
-                if( item.ToString()== DateTime.Now.TimeOfDay.ToString("hh''mm") && lastOp!= DateTime.Now.TimeOfDay.ToString("hh''mm"))
+                if( lastOp!= DateTime.Now.TimeOfDay.ToString("hh''mm"))
                 {
                     lastOp = DateTime.Now.TimeOfDay.ToString("hh''mm");
                     foreach (HtmlElement HtmlElement1 in webBrowser1.Document.Body.All)
@@ -159,11 +155,15 @@ namespace ForumBot
 
                     }
                     await WaitNSeconds(5000);
-                   
 
                 }
-            }
             
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            timer1.Interval = Int32.Parse(comboBox1.SelectedItem.ToString()) *60000;
         }
     }
 }

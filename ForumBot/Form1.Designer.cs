@@ -41,11 +41,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -154,61 +152,19 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Yazılacak yorum";
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(15, 468);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(182, 89);
-            this.checkedListBox1.TabIndex = 12;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.comboBox1.Location = new System.Drawing.Point(230, 468);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
             "10",
             "11",
             "12",
@@ -259,35 +215,33 @@
             "57",
             "58",
             "59"});
-            this.comboBox2.Location = new System.Drawing.Point(379, 468);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 14;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(524, 468);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 32);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Ekle";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.comboBox1.Location = new System.Drawing.Point(794, 447);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(639, 454);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tekrarlama süresi(Dk)";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 595);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(1069, 492);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label4);
@@ -324,11 +278,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label6;
     }
 }
 
